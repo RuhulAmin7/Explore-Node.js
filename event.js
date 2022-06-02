@@ -2,8 +2,12 @@ const Event = require("events");
 
 const events = new Event();
 
-events.on("myEvent", () => {
-  console.log("This is my my event");
+events.on("myEvent", (p) => {
+  console.log("This is my event");
+  console.log(p);
 });
 
-events.emit("myEvent");
+events.emit("myEvent", {
+  name: "node.js",
+  birthYear: "2009",
+});
