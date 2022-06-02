@@ -14,7 +14,6 @@ const http = require("http");
 const server = http.createServer((req, res) => {
   if (req.url === "/video") {
     const data = fs.createReadStream("./video.mp4");
-
     res.writeHead("200", { "Content-Type": "video/mp4" });
     data.on("data", (chunk) => {
       res.write(chunk);
