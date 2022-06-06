@@ -26,7 +26,6 @@ const server = http.createServer((req, res) => {
         const fileName = files.photo.originalFilename;
         const tempPath = files.photo.filepath;
         fs.renameSync(tempPath, `${__dirname}/resources/${fileName}`);
-
         res.end("Thanks for submitting data");
       }
     });
